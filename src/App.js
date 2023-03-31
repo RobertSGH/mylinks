@@ -10,6 +10,10 @@ import {
 } from '@react-three/drei';
 import { FaTwitter, FaInstagram, FaGithub, FaGlobe } from 'react-icons/fa';
 import { Suspense, useRef } from 'react';
+import firebaseConfig from './fire';
+import { initializeApp } from 'firebase/app';
+
+export const app = initializeApp(firebaseConfig);
 
 const LinkButton = ({ url, Icon }) => {
   return (
