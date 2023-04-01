@@ -52,7 +52,7 @@ const App = () => {
     const mesh = useRef(null);
     useFrame(({ clock }) => {
       if (mesh.current) {
-        const rotationValue = Math.sin(clock.getElapsedTime()) * 0.25;
+        const rotationValue = Math.sin(clock.getElapsedTime()) * 0.1;
         mesh.current.rotation.y = rotationValue;
       }
     });
