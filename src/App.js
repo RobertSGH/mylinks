@@ -1,6 +1,5 @@
 import './App.css';
 import backgroundVideo from './media/dream_ihkcj223z6d.mp4';
-import React from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import {
   useGLTF,
@@ -8,8 +7,14 @@ import {
   OrbitControls,
   Environment,
 } from '@react-three/drei';
-import { FaTwitter, FaInstagram, FaGithub, FaGlobe } from 'react-icons/fa';
-import { Suspense, useRef } from 'react';
+import {
+  FaTwitter,
+  FaInstagram,
+  FaGithub,
+  FaGlobe,
+  FaLinkedin,
+} from 'react-icons/fa';
+import { React, Suspense, useRef } from 'react';
 import firebaseConfig from './fire';
 import { initializeApp } from 'firebase/app';
 
@@ -35,9 +40,10 @@ const Footer = () => {
 const App = () => {
   const links = [
     { url: 'https://robertsaban.com/', Icon: FaGlobe },
+    { url: 'https://www.linkedin.com/in/robertsaban/', Icon: FaLinkedin },
     { url: 'https://twitter.com/RobertJSSX/', Icon: FaTwitter },
     { url: 'https://github.com/RobertSGH/', Icon: FaGithub },
-    { url: 'https://instagram.com/', Icon: FaInstagram },
+    { url: 'https://www.instagram.com/robwebdev/', Icon: FaInstagram },
   ];
 
   const Avatar = () => {
@@ -86,7 +92,11 @@ const App = () => {
             </Canvas>
           </div>
           <h1 className='username'>Robert Saban</h1>
-          <p className='skills'>| Frontend Dev | React/JS & CSS |</p>
+          <h2 className='skills'>| Frontend Dev | React | JS & CSS |</h2>
+          <p className='description'>
+            I'm a Frontend Developer with experience in building modern and
+            responsive websites using JS/React & CSS.
+          </p>
         </div>
         {links.map((link, index) => (
           <LinkButton key={index} url={link.url} Icon={link.Icon} />
